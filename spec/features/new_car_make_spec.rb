@@ -6,15 +6,15 @@ feature 'user fills out make form', %Q{
   So that I can keep track of the types of cars found in the lot
 } do
 
+  scenario 'user submits new carmake' do
 
+    make = Carmake.new
 
-    make = CarMake.new(attrs)
-
-    visit new_car_path
+    visit 'carmakes/new'
     fill_in 'Car Make', with: 'Ford'
     click_on 'Submit'
 
 
     expect(page).to have_content 'Ford'
-
+  end
 end
