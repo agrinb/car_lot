@@ -19,8 +19,8 @@ feature 'user fills the car form', %Q{
     carmake =  FactoryGirl.create(:carmake)
     car = FactoryGirl.create(:car, carmake: carmake)
 
-    visit new_carmake_car_path
-    fill_in 'Car Make', with: car.make
+    visit new_car_path
+    select( car.carmake.make, from: 'Make:')
     fill_in 'Color', with: car.color
     fill_in 'Year', with: car.year
     fill_in 'Mileage', with: car.mileage
@@ -28,7 +28,7 @@ feature 'user fills the car form', %Q{
     click_on 'Submit'
 
 
-    expect(page).to have_content car.make
+    expect(page).to have_content car.carmake.make
     expect(page).to have_content car.color
     expect(page).to have_content car.year
     expect(page).to have_content car.mileage
