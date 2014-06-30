@@ -1,14 +1,6 @@
 <div class="container">
-<ul>
-  <% @carmakes.each do |carmake| %>
-    <li><%= carmake.make %> - <%= carmake.car_country%></li>
-    <% end %>
-</ul>
-</div>
-
-<div class="container">
   <h1>Welcome to The Car Lot</h1>
-  <h2> Inventory: </h2>
+  <h2> Available Manufacturers: </h2>
       <div class="cars_table">
         <table class="table table-striped">
           <tr>
@@ -18,7 +10,7 @@
         <% @carmakes.each do |carmake| %>
           <tr>
             <td><%= carmake.make %></td>
-            <td><%= carmake.country %></td>
+            <td><%= carmake.car_country %></td>
         <% end %>
         </table>
       </div>
