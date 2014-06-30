@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :cars
   resources :carmakes do
     resources :cars
   end
