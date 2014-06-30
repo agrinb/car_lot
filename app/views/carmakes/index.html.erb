@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Welcome to The Car Lot</h1>
+  <h2> Available Manufacturers: </h2>
+      <div class="cars_table">
+        <table class="table table-striped">
+          <tr>
+            <th>Make</th>
+            <th>Country</th>
+          </tr>
+        <% @carmakes.each do |carmake| %>
+          <tr>
+            <td><%= carmake.make %></td>
+            <td><%= carmake.car_country %></td>
+        <% end %>
+        </table>
+      </div>
+      <%= link_to "Add New Car", new_car_path %><br>
+      <%= link_to "Add New Car Make", new_carmake_path %>
+</div>
+
