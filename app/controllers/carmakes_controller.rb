@@ -15,14 +15,16 @@ class CarmakesController < ApplicationController
   def create
     @carmake = Carmake.new(carmake_params)
     if @carmake.save
-      redirect_to @carmake, notice: 'Successfully added Car Make.'
+      redirect_to @carmake
+      flash[:notice] = "Success! Your Make was saved."
     else
+      flash[:alert] = "Could not save."
       render :new
     end
   end
 
   protected
   def carmake_params
-    params.require(:carmake).permit(:make)
+    params.require(:carmake).permit(:make, :car_country)
   end
 end

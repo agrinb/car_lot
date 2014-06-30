@@ -1,3 +1,5 @@
 class Carmake < ActiveRecord::Base
-  validates :carmake, presence: true
+  validates :make, presence: true
+
+  has_many :cars
 end

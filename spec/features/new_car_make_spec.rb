@@ -12,6 +12,7 @@ feature 'user fills out make form', %Q{
 
     visit 'carmakes/new'
     fill_in 'Car Make', with: 'Ford'
+    fill_in 'Country', with: 'USA'
     click_on 'Submit'
 
 
