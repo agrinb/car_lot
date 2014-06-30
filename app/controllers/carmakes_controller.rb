@@ -15,7 +15,7 @@ class CarmakesController < ApplicationController
   def create
     @carmake = Carmake.new(carmake_params)
     if @carmake.save
-      redirect_to @carmake
+      redirect_to carmakes_path
       flash[:notice] = "Success! Your Make was saved."
     else
       flash[:alert] = "Could not save."

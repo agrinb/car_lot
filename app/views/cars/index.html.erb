@@ -1,24 +1,21 @@
 <div class="container">
-<ul>
-  <% @carmakes.each do |carmake| %>
-    <li><%= carmake.make %> - <%= carmake.car_country%></li>
-    <% end %>
-</ul>
-</div>
-
-<div class="container">
   <h1>Welcome to The Car Lot</h1>
   <h2> Inventory: </h2>
       <div class="cars_table">
         <table class="table table-striped">
           <tr>
             <th>Make</th>
-            <th>Country</th>
+            <th>Color</th>
+            <th>Year</th>
+            <th>Mileage</th>
           </tr>
-        <% @carmakes.each do |carmake| %>
+        <% @cars.each do |car| %>
           <tr>
-            <td><%= carmake.make %></td>
-            <td><%= carmake.country %></td>
+            <td><%= car.carmake.make %></td>
+            <td><%= car.color %></td>
+            <td><%= car.year %></td>
+            <td><%= car.mileage %></td>
+          </tr>
         <% end %>
         </table>
       </div>

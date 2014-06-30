@@ -32,7 +32,25 @@ feature 'user fills the car form', %Q{
     expect(page).to have_content car.color
     expect(page).to have_content car.year
     expect(page).to have_content car.mileage
-
-
   end
+
+  # scenario 'user submits new car to inventory' do
+  #   carmake =  FactoryGirl.create(:carmake)
+  #   car = FactoryGirl.create(:car, carmake: carmake)
+
+  #   visit new_car_path
+  #   select( car.carmake.make, from: 'Make:')
+  #   fill_in 'Color', with: car.color
+  #   fill_in 'Year', with: car.year
+  #   fill_in 'Mileage', with: car.mileage
+  #   fill_in 'Description', with: car.description
+  #   click_on 'Submit'
+
+
+  #   expect(page).to have_content car.carmake.make
+  #   expect(page).to have_content car.color
+  #   expect(page).to have_content car.year
+  #   expect(page).to have_content car.mileage
+  # end
+
 end
